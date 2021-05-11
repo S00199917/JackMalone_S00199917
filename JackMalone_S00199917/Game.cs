@@ -13,5 +13,10 @@ namespace JackMalone_S00199917
         public decimal Price { get; set; }
         public string GameImage { get; set; }
         public string Description { get; set; }
+
+        public void DecreasePrice(decimal decrease)
+        {
+            Price -= decrease;
+        }
     }
 }
