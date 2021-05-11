@@ -6,8 +6,18 @@
         xmlns:local="clr-namespace:JackMalone_S00199917"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Image x:Name="img1" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="412" Margin="210,0,0,0"/>
+    <Window.Resources>
+        <DataTemplate x:Key="listboxTemplate">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Image Source="{Binding GameImage}" Width="75" Height="75"/>
 
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" Margin="5" FontSize="12"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <ListBox x:Name="listBox" Margin="97,0,98,0" ItemTemplate="{StaticResource listboxTemplate}" Grid.Row="0" Grid.Column="0"/>
     </Grid>
 </Window>

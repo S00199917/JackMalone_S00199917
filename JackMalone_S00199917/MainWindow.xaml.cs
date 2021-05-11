@@ -20,9 +20,15 @@ namespace JackMalone_S00199917
     /// </summary>
     public partial class MainWindow : Window
     {
+        static GameData db = new GameData();
         public MainWindow()
         {
             InitializeComponent();
+
+            var query = from game in db.Games
+                        select game;
+
+            listBox.ItemsSource = query.ToList();
         }
     }
 }
