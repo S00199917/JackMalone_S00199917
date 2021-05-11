@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JackMalone_S00199917"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}">
     <Window.Resources>
         <DataTemplate x:Key="listboxTemplate">
             <StackPanel Orientation="Horizontal" Margin="5">
@@ -13,11 +15,34 @@
 
                 <StackPanel>
                     <TextBlock Text="{Binding Name}" Margin="5" FontSize="12"/>
+                    <TextBlock Text="{Binding CriticScore}" Margin="5" FontSize="12"/>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <ListBox x:Name="listBox" Margin="97,0,98,0" ItemTemplate="{StaticResource listboxTemplate}" Grid.Row="0" Grid.Column="0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <ListBox x:Name="lbxGames" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="5" ItemTemplate="{StaticResource listboxTemplate}" SelectionChanged="lbxGames_SelectionChanged" />
+
+        <TextBox x:Name="tbxSearch" Grid.Column="1" Text="Search" GotFocus="tbxSearch_GotFocus" KeyDown="tbxSearch_KeyDown"/>
+
+        <TextBlock x:Name="tbxName" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap"/>
+        <TextBlock x:Name="tbxPrice" Grid.Column="3" Grid.Row="3" TextWrapping="Wrap"/>
+        <TextBlock x:Name="tbxDescription" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
     </Grid>
 </Window>

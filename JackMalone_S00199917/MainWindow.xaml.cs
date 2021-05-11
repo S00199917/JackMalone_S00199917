@@ -28,7 +28,43 @@ namespace JackMalone_S00199917
             var query = from game in db.Games
                         select game;
 
-            listBox.ItemsSource = query.ToList();
+            lbxGames.ItemsSource = query.ToList();
+        }
+        
+        private void lbxGames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Game selectedGame = lbxGames.SelectedItem as Game;
+
+            if (selectedGame != null)
+            {
+                tbxDescription.Text = selectedGame.Description;
+                tbxName.Text = selectedGame.Name;
+                tbxPrice.Text = string.Format($"{selectedGame.Price:c}");
+            }
+        }
+
+        private void tbxSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbxSearch.Text = "";
+        }
+
+        private void tbxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (tbxSearch.Text == null || tbxSearch.Text == "")
+            {
+                var query = from game in db.Games
+                            select game;
+
+                lbxGames.ItemsSource = query.ToList();
+            }
+            else
+            {
+                var query = from game in db.Games
+                            where game.Platform.Contains(tbxSearch.Text.ToString())
+                            select game;
+
+                lbxGames.ItemsSource = query.ToList();
+            }
         }
     }
 }
