@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JackMalone_S00199917", "Jac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecreasePriceTest", "DecreasePriceTest\DecreasePriceTest.csproj", "{6B142DD9-4213-4887-9984-27FBFD17828C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManagement\DataManagement.csproj", "{48CEAE49-C440-4D28-B0FA-FB9D40746ED9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6B142DD9-4213-4887-9984-27FBFD17828C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B142DD9-4213-4887-9984-27FBFD17828C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B142DD9-4213-4887-9984-27FBFD17828C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48CEAE49-C440-4D28-B0FA-FB9D40746ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48CEAE49-C440-4D28-B0FA-FB9D40746ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48CEAE49-C440-4D28-B0FA-FB9D40746ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48CEAE49-C440-4D28-B0FA-FB9D40746ED9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
