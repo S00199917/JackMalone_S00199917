@@ -6,14 +6,32 @@ using System.Threading.Tasks;
 
 namespace JackMalone_S00199917
 {
-    class Game
+    public class Game
     {
+        //Properties
         public string Name { get; set; }
+        public string Platform { get; set; }
         public int CriticScore { get; set; }
         public decimal Price { get; set; }
         public string GameImage { get; set; }
         public string Description { get; set; }
 
+        //Constructor
+        public Game()
+        {
+
+        }
+
+        public Game(string name, int criticScore, decimal price, string gameImage, string description)
+        {
+            Name = name;
+            CriticScore = criticScore;
+            Price = price;
+            GameImage = gameImage;
+            Description = description;
+        }
+
+        //Decrease price method
         public void DecreasePrice(decimal decrease)
         {
             Price -= decrease;
